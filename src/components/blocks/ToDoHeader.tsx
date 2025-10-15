@@ -14,7 +14,7 @@ const ToDoHeader = ({
     name: "User",
   };
   const length = tasks.length;
-  const spelling = length <= 1 ? "task" : "tasks";
+  const spelling = length === 1 ? "task" : "tasks";
   const status = currentFilter;
   return (
     <div className="flex flex-row justify-between">
