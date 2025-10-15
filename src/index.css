@@ -1,0 +1,279 @@
+@import "tailwindcss";
+
+/*! Aspekta Variable | OFL v1.1 License | Ivo Dolenc (c) 2025 | https://github.com/ivodolenc/aspekta */
+
+@font-face {
+  font-family: "Aspekta Variable";
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+  src: url("../public/fonts/AspektaVF.woff2") format("woff2");
+}
+
+html {
+  font-family: "Aspekta", sans-serif;
+}
+:root {
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgb(0, 0, 0);
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* --- NEUTRAL PALETTE --- */
+  --color-neutral-100: #f8fafc;
+  --color-neutral-200: #f8fafa;
+  --color-neutral-300: #ecf1fa;
+  --color-neutral-400: #cbd4e1;
+  --color-neutral-500: #9aa4b1;
+  --color-neutral-600: #737883;
+  --color-neutral-700: #52555b;
+  --color-neutral-800: #2b2b3b;
+  --color-neutral-900: #000000;
+
+  /* --- PRIMARY PALETTE (Blue in config) --- */
+  --color-primary-1: #1a2bc3; /* Using the inferred valid hex from config */
+  --color-primary-2: #031c8c;
+  --color-primary-3: #0f1053;
+  --color-primary-4: #a6d8fd;
+
+  /* --- ACCENT PALETTE --- */
+  --color-accent-yellow: #fed700;
+  --color-accent-yellow-light: #fef8cf;
+  --color-accent-red: #fe0201;
+  --color-accent-red-light: #fff4f4;
+
+  --color-background: var(--color-neutral-100);
+  --color-text-default: var(--color-neutral-800);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+.form-custom-input {
+  background-color: #747bff;
+}
+.form-custom-input {
+  position: relative;
+  z-index: 0;
+  height: 2.5rem;
+  margin-bottom: 0px;
+  padding-right: 0.875rem;
+  padding-left: 0.875rem;
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--color-neutral-400);
+
+  border-radius: 0.5rem;
+  background-color: var(--color-neutral-100);
+  box-shadow: rgba(16, 24, 40, 0.05) 0px 1px 2px 0px;
+  transition-property: box-shadow, border-color;
+  transition-duration: 300ms, 300ms;
+  transition-timing-function: ease-in-out, ease-in-out;
+  color: var(--color-neutral--900);
+  font-size: 0.875rem;
+  line-height: 170%;
+}
+
+.form-custom-input:focus {
+  border-color: var(--color-primary-4);
+  box-shadow: rgba(26, 43, 195, 0.05) 0px 1px 2px 0px;
+  outline-offset: 0px;
+  outline-style: none;
+  outline-width: 3px;
+}
+.custom-button {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  height: 2.5rem;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  color: #fff;
+  background-color: var(--color-primary-1);
+  box-shadow:
+    rgba(15, 16, 83, 0.4) 0px 1px 2px 0px,
+    rgba(3, 29, 140, 0.72) 0px 0px 0px 1px;
+  transition-property: box-shadow;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 150%;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.custom-button:hover {
+  box-shadow:
+    rgba(15, 16, 83, 0.4) 0px 1px 2px 0px,
+    rgba(3, 29, 140, 0.72) 0px 0px 0px 1px,
+    rgba(3, 29, 140, 0.08) 0px 0px 0px 4px;
+}
+
+.custom-button::before {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  width: 100%;
+  height: 100%;
+  opacity: 0.16;
+  content: "";
+  position: absolute;
+  z-index: -1;
+  border-radius: inherit;
+  transition: opacity 0.3s ease-in-out;
+}
+.custom-button:hover::before {
+  opacity: 0.32;
+}
+.custom-button {
+  border-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='125' height='40' fill='none'%3e%3crect width='124' height='39' x='.5' y='.5' stroke='url(%23a)' stroke-opacity='.2' rx='7.5'/%3e%3cdefs%3e%3clinearGradient id='a' x1='62.5' x2='62.5' y1='0' y2='40' gradientUnits='userSpaceOnUse'%3e%3cstop stop-color='white'/%3e%3cstop offset='1' stop-color='white' stop-opacity='0'/%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e")
+    8 / 0.5rem stretch;
+}
+.custom-select:focus {
+  outline: none;
+  border: 0;
+}
+.custom-select {
+  appearance: none;
+
+  position: relative;
+  z-index: 0;
+  display: flex;
+  cursor: pointer;
+  height: 2.5rem;
+  padding-right: 2.5rem;
+  padding-left: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--neutral--100);
+  box-shadow:
+    rgba(0, 0, 0, 0.12) 0px 1px 2px 0px,
+    rgba(15, 16, 83, 0.08) 0px 0px 0px 1px;
+  transition-property: box-shadow;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+  color: var(--neutral--900);
+  font-size: 1rem;
+  line-height: 150%;
+  font-weight: 600;
+  text-decoration: none;
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2222%22%20height%3D%2214%22%20viewBox%3D%220%200%2022%2014%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M18.685%202.99714C19.1051%203.41725%2019.1049%204.09848%2018.685%204.51873L11.8368%2011.367C11.4165%2011.7872%2010.7354%2011.7872%2010.3152%2011.367L3.46694%204.51873C3.04703%204.09848%203.04682%203.41725%203.46694%202.99714C3.88705%202.57702%204.56828%202.57723%204.98853%202.99714L11.076%209.08457L17.1634%202.99714C17.5836%202.57723%2018.2649%202.57702%2018.685%202.99714Z%22%20fill%3D%22black%22%2F%3E%3C%2Fsvg%3E");
+  background-position: 90% 50%;
+  background-size: 1.125rem;
+  background-repeat: no-repeat;
+}
+
+.custom-select:hover {
+  box-shadow:
+    rgba(0, 0, 0, 0.12) 0px 1px 2px 0px,
+    rgba(15, 16, 83, 0.08) 0px 0px 0px 1px,
+    rgba(3, 29, 140, 0.08) 0px 0px 0px 4px;
+}
+.custom-scrollbar {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: var(--color-primary-4) transparent; /* Firefox */
+}
+
+/* Chrome, Edge, Safari */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary-1);
+  border-radius: 10px;
+  transition: background-color 0.2s ease;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-primary-2);
+}
+
+.custom-scrollbar::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.custom-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  cursor: pointer;
+  background-color: var(--color-neutral-100);
+  border-radius: 50%;
+  background-position: center;
+  background-size: 0.875rem;
+  background-repeat: no-repeat;
+  position: relative;
+  border: 2px solid var(--color-neutral-400);
+  transition: all 0.2s ease-in-out;
+}
+
+.custom-icon.dark {
+  border: none;
+  background-color: var(--color-primary-1);
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M20%205C20.2652%205%2020.5196%205.10536%2020.7071%205.29289C20.8946%205.48043%2021%205.73478%2021%206C21%206.26522%2020.8946%206.51957%2020.7071%206.70711C20.5196%206.89464%2020.2652%207%2020%207H19L18.997%207.071L18.064%2020.142C18.0281%2020.6466%2017.8023%2021.1188%2017.4321%2021.4636C17.0619%2021.8083%2016.5749%2022%2016.069%2022H7.93C7.42414%2022%206.93707%2021.8083%206.56688%2021.4636C6.1967%2021.1188%205.97092%2020.6466%205.935%2020.142L5.002%207.072L5%207H4C3.73478%207%203.48043%206.89464%203.29289%206.70711C3.10536%206.51957%203%206.26522%203%206C3%205.73478%203.10536%205.48043%203.29289%205.29289C3.48043%205.10536%203.73478%205%204%205H20ZM16.997%207H7.003L7.931%2020H16.069L16.997%207ZM14%202C14.2652%202%2014.5196%202.10536%2014.7071%202.29289C14.8946%202.48043%2015%202.73478%2015%203C15%203.26522%2014.8946%203.51957%2014.7071%203.70711C14.5196%203.89464%2014.2652%204%2014%204H10C9.73478%204%209.48043%203.89464%209.29289%203.70711C9.10536%203.51957%209%203.26522%209%203C9%202.73478%209.10536%202.48043%209.29289%202.29289C9.48043%202.10536%209.73478%202%2010%202H14Z%22%20fill%3D%22white%22%2F%3E%3C%2Fsvg%3E");
+}
+.custom-icon.active {
+  background-color: var(--color-primary-1);
+  border: none;
+
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M2.75%208.75L6.25%2012.25L13.25%204.75%22%20stroke%3D%22white%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E");
+}
+.task-right {
+  margin-right: -2.55rem;
+  transition: margin-right 0.3s ease-in-out;
+}
+
+.task-item-wrapper:hover .task-right {
+  margin-right: 0rem;
+}
+
+.task-item-competed .task-item-text::after {
+  width: 100%;
+}
+.task-item-text {
+  line-height: 1.2em;
+  position: relative;
+}
+.task-item-text::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  transition: width 0.2s ease-in-out;
+  height: 1px;
+  background-color: #000;
+  top: calc(0.7em - 1px);
+  left: 0;
+}
+.text-highlight {
+  color: var(--color-primary-4);
+}
